@@ -1,0 +1,26 @@
+Speed Shift — Proprietary License
+
+Copyright (c) 2026 AnudeepPamidi. All rights reserved.
+
+Speed Shift is free to install and use on your own BMW, for personal,
+non-commercial use only. You may NOT:
+
+- copy, reproduce, or share the app's code or files;
+- modify, reverse-engineer, decompile, or extract the code;
+- redistribute, re-upload, re-publish, or sell the app or any part of it;
+- use the code, design, or any part of it in your own app or project;
+- claim the app, or any part of it, as your own work.
+
+The app is provided "AS IS", without warranty of any kind. The author is
+not liable for any claim, damages, or other liability arising from the use
+of the app.
+
+---
+
+This app is built on:
+- the idrive7-apps kit (MIT) by cauliflowermossgrape and contributors
+- robertnisipeanu's cluster-render client (MPL-2.0) and cluster-render service
+
+Their licences apply to their own code only; see kit/LICENSE and the
+cluster-render repo for the full texts. They do not cover Speed Shift's
+own code, which is proprietary to AnudeepPamidi as stated above.
