@@ -1,6 +1,6 @@
 # Speed Shift — speed limiter, M-style shift lights and live data on the BMW instrument cluster
 
-**By AnudeepPamidi.** Version 1.5.5. For iDrive 7 / MGU (tested target: a
+**By AnudeepPamidi.** Version 1.5.6. For iDrive 7 / MGU (tested target: a
 2024 BMW X3 G01 xDrive30i, cluster 1920×720).
 
 A row of OEM-style M shift-light segments at the very top of the instrument
@@ -408,12 +408,12 @@ Needs: **Cluster renderer** 0.4.2 or newer (the car has 0.5.12) and
 
 **From the MGU Store (after publishing — see RELEASE.md):** add the source
 `AnudeepPamidi1/speed-shift`, install
-**Speed Shift 1.5.5**.
+**Speed Shift 1.5.6**.
 
 **Without the Store (mgu-deploy, over SSH):**
 
 ```
-mgu-deploy install /path/to/muse_shift_bar@1.5.5.mgu --yes
+mgu-deploy install /path/to/muse_shift_bar@1.5.6.mgu --yes
 ```
 
 Then restart the head unit (or start the app once from the Store).
@@ -482,8 +482,8 @@ shift-bar/
   kit/                      the idrive7-apps kit (build tools + runtime)
   oap-sdk/                  the OAP SDK (from the head unit, via mgu-deploy sdk-donor)
   dist/
-    muse_shift_bar@1.5.5.mgu   the installable package
-    muse_shift_bar@1.5.5.tgz   the same package as a tarball
+    muse_shift_bar@1.5.6.mgu   the installable package
+    muse_shift_bar@1.5.6.tgz   the same package as a tarball
   test/smoke.js             headless smoke test (node test/smoke.js — 56 checks)
 ```
 
@@ -506,6 +506,17 @@ correctly.
 
 ## Version history
 
+- **1.5.6** — the working build (2026-11-15): the 1.5.5 package would not
+  start on the car — its JavaScript used newer syntax the head unit's
+  Node 8 cannot read. 1.5.6 rebuilds it for Node 8 and is verified on the
+  car itself (installed and running, all signals subscribed). Everything
+  from 1.5.5 included: his saved positions/sizes as defaults; street
+  name fixed; limit layer hides when no limit; lane redesigned; car
+  ahead with gap bar and lorry rule; BC menu button ("BC menu — hide
+  overlays") that hides all overlays for 20 s so the stock BC menu can
+  show — note: the car's BC button press sends no signal any app can
+  see, so the menu button is the way to see the BC menu while Speed
+  Shift runs. Smoke test: 138 checks.
 - **1.5.5** — your layout as the design (2026-11-15): his saved positions/sizes are the
   defaults, so a fresh install lands exactly on his cluster; street
   name fixed above the bottom strip (never cut off); the limit layer
